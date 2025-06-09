@@ -1,0 +1,73 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coder Proposal 💻❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0f0f0f;
+      color: #00ffcc;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    p {
+      font-size: 1.2rem;
+      text-align: center;
+      margin: 10px;
+    }
+    .button {
+      background-color: #00ffcc;
+      color: #000;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .heart {
+      position: absolute;
+      animation: fall 4s linear infinite;
+      color: red;
+    }
+    @keyframes fall {
+      0% { top: -10%; left: calc(100% * var(--x)); opacity: 0; }
+      50% { opacity: 1; }
+      100% { top: 110%; left: calc(100% * var(--x)); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Will You Be the CSS to My HTML? 💻❤️</h1>
+  <p>I promise to center your divs, never overwrite your styles,</p>
+  <p>and give you all the commits you deserve.</p>
+  <button class="button" onclick="alert('Yay! Proposal Accepted ❤️')">Accept Proposal</button>
+
+  <script>
+    // Heart rain animation
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.textContent = "❤️";
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.setProperty("--x", Math.random());
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }, 300);
+  </script>
+</body>
+</html>
